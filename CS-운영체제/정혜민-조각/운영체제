@@ -1,3 +1,5 @@
+링크(정혜민 개인 노션) : https://www.notion.so/CS-ea100dba406e4cc08c1d148f0250f5fe?pvs=4
+
 # OS(Operati System 운영체제)
 
 1. **OS - 프로세스 & 스레드 개념**
@@ -12,10 +14,7 @@
     멀티 프로세스로 실행되는 작업을 멀티 스레드로 실행할 경우,프로세스를 생성하여 자원을 할당하는 시스템 콜이 줄어들어 자원 사용량을 줄일 수 있기 때문. 또한 프로세스간 통신비용보다 스레드간 통신비용이 적음.
     - (why not?) 스레드를 쓰지않고 한개의 프로그램에서 여러 프로세스를 만들게 되면, 운영체제의 안정성 제약을 깨뜨리게 됨.(운영체제는 프로세스마다 자신에게 할당된 메모리 내의 정보에만 접근할 수 있도록 제약)
     - (example?) 프로세스는 인텔리제이(작업관리자의 프로세스), 스레드는 그중 Junit, 코드 수정 등 각각 개별 활동
-    
-    ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a10436ad-127b-4031-b397-4a19172a8c43/Untitled.png)
-    
-    ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/552649b2-24e4-4576-911d-f245ca66d7ab/Untitled.png)
+
     
     - **컨텍스트 스위칭에 대해 설명해보세요.**
     - (Abstract)컨텍스트는 프로세스의 정보를 의미하는 단어이고, 스위칭은 말그대로 바꾸다라는 의미입니다.  즉 컨텍스트 스위칭이란, 여러 프로세스가 메모리에서 실행되고 있을 때, 인터럽트 요청에 의해 기존에 실행되던 프로세스를 잠시 중단하고 우선순위가 높은 다른 프로세스를 실행하는 것을 의미합니다. 이 기술이 등장한 이유는 CPU가 한번에 하나의 task밖에 처리하지 못하기 때문에, 발생하는 작업 지연을 방지하기 위해 등장했습니다.
@@ -41,8 +40,6 @@
      → 그러므로, 동기화할 때 메소드 전체를 동기화할 것인지, 아니면 특정 부분만 동기화할 것인지 임계 구역을 선택 
     - 또한, 하나의 스레드라도 오류로 종료된다면 전체 프로세스가 종료되는 위험이 있다.
     
-    ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/10698da6-3c06-467d-9edd-a0d35f22c90f/Untitled.png)
-    
 2. **OS - 임계영역 & 세마포어 & 뮤텍스**
     - **세마포어와 뮤텍스의 차이에 대해 설명해보세요.**
     - (Abstract) 뮤텍스는 Locking 메커니즘으로 락을 걸은 쓰레드(wait)만이 임계 영역을 나갈때 락을 해제)signal)할 수 있습니다. 하지만 세마포어는 Signaling 메커니즘으로 락을 걸지 않은 쓰레드도 signal을 사용해 락을 해제할 수 있습니다.
@@ -54,8 +51,7 @@
     - (Abstract) 스레드가 안전하다는 의미는, 멀티 스레드 프로그래밍에서 함수,변수, 객체 등이 여러 스레드로부터 동시에 접근이 이루어져도 프로그래밍 실행에 문제가 없음을 의미합니다.
     자바에서는 synchronized 키워드를 활용하여 synchronized로 지정된 임계영역은 한 스레드가 이 영역에 접근하여 사용할 때 lock을 걸어줄 수 있습니다. 단 이런 방법은 속도 측면에서 손해입니다.
     → 스프링에서 어떻게 하는지 이해x,,
-    
-    ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/d5130b32-395a-4fdc-bc9d-a3e2d9bbbc80/Untitled.png)
+
     
 3. **OS - 교착상태(deadlock)**
     - 교착상태가 무엇인지와 어떻게 해결하는지에 대해서 설명해보세요.
@@ -64,9 +60,6 @@
     - (what?)교착상태란,아래 그림과 같이 자동차(프로세스)들이 현재 위치한 길(자원)을 점유함과 동시에 다른 차가 사용하는 길을 사용하려고 대기하고 있지만 다른 길을 사용할 수 없으며 현재 길에서도 벗어나지 못하는 상태입니다.
     아래 4가지 조건이 모두 충족되어야 발생.
     
-    ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/fbf8d2cf-3834-401a-8f02-d944dcd3da3c/Untitled.png)
-    
-    ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/af679cb8-6dca-4355-87ac-d3c4e1a0528a/Untitled.png)
     
 4. **OS - 동기 & 비동기**
     - **동기와 비동기의 차이를 설명해보세요.**
@@ -80,9 +73,6 @@
     멀티스레드와 비동기는 다르다.
     동기식 멀티스레드 : 여러직원(멀티스레드)이 순차적으로 조립해나가는 것(선행조건 필수)
     비동기식 멀티스레드 : 여러직원(멀티스레드)이 동시다발적으로 조립해나가는 것(선행조건 없음)
-    [https://evan-moon.github.io/2019/09/19/sync-async-blocking-non-blocking/](https://evan-moon.github.io/2019/09/19/sync-async-blocking-non-blocking/)
-    
-    ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/7f9982c3-b447-4962-858d-6e44cc8a4045/Untitled.png)
     
     - **동기적 프로그래밍과 비동기적 프로그래밍의 차이를 설명해보세요.**
     -(Abstract) 동기적 프로그래밍은 특정 코드를 수행 완료한 이후 그 다음 코드를 수행합니다. 비동기적 프로그래밍은 특정 코드를 수행하는 도중에도 다음 코드로 계속 넘어가며 코드를 수행합니다.
