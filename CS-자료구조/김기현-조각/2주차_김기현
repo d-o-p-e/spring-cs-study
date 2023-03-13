@@ -1,0 +1,135 @@
+# 자료구조(2주차)
+
+### 월요일 모임 토픽
+
+1. 자료구조 - 정의
+    1. 자료구조의 정의와 목적에 대해 설명해주세요.
+2. 자료구조 - Array
+    1. Array(List)가 무엇인지 설명하고, Array를 적용하는 이유와 적용하지 않으면 어떤 것이 불편한지 설명해주세요.
+    2. Array(List)의 장/단점을 설명해주세요.
+    3. Array와 ArrayList의 차이점에 대해 설명해주세요.
+3. 자료구조- Stack,Heap,Tree,Queue
+    1. 위에 제시된 4개의 자료구조에 대해 설명해주세요.
+    2. priority Queue에 대해 설명해주세요.
+4. 자료구조 - 해시테이블
+    1. 해시테이블과 시간 복잡도에 대해 설명해주세요.
+    2. HashMap과 Hash Table의 차이점에 대해 설명해주세요
+5. 자료구조 - BST & Binary Tree
+    1. BST와 Binary Tree에 대해 설명해주세요
+
+---
+
+## 1. 자료구조 정의
+
+자료구조 정의 : 데이터를 생성 저장하기 위한 프레임? 논리적인 규칙에 따라 정리된 자료?
+
+예를들어, 큐와 스택 링크드리스트, 트리가 있다.
+
+위키백과에 의하면 데이터의 집합, 관계, 모임 그리고 데이터에 적용할 수 있는 함수나 명령…
+
+자료구조 목적 : 데이터를 효율적으로 관리하기 위함. 그렇다면 효율적으로 관리하는 것은 무엇일까??? >> 자료의 관리(Search), 추가, 삭제, 변경이 용이하도록 하는 것
+
+## 2. Array
+
+배열이란 무엇일까??? 말 그대로 자료를 순차적으로 나열되어 있는 집합.
+
+Array를 적용하는 이유 : 정해진 규칙이 없는 데이터를 개발자가 원하는 Index(주솟값)에 따라 저장시키기 위해서? 적용하지 않으면 데이터를 나열시킬 수 없어서 접근하기 어려움
+
+Array 와 ArrayList 차이점 (Java 에서의 차이)
+
+먼저 Array와 ArrayList는 같은 것이 아니다! 라고 생각해야 할 것 같다.
+
+Array인 경우 Array 인터페이스가 따로 있고 ArrayList는 List 인터페이스를 상속받아서 사용할 수 있다. 사용가능한 메서드들은 언어마다 다를테니 넘어가고 자료구조 이론으로 접근하자면 Array와 ArrayList는 다음과 같은 차이점이 있다.
+
+**크기가 고정되어있는가?**
+
+Array는 초기화 할 때 크기를 정해주고 그 이상으로 데이터를 주입할 수 없다.
+
+하지만 ArrayList 는 데이터를 넣어줄 때 그 크기가 동적으로 할당된다.
+
+이 차이점에서 장단점이 나온다.
+
+배열은 크기를 고정적으로 정해주기 때문에 데이터 사용량을 제한할 수 있다는 장점이 있다. 하지만 데이터가 가변적이고 추가와 삭제 변경이 필요한 경우에는 크기가 정해져 있기때문에 배열을 사용하기가 불편하다.
+
+ArrayList는 사용할 수 있는 데이터의 크기를 고정하지 않아 추가 삭제 변경이 용이하다. 하지만 데이터를 추가할 때마다 데이터의 사용량이 증가가 되므로 정해진 데이터 사용량 그 이상으로 사용량이 증가하므로 조심해야한다. 
+
+## 3. Stack, Queue, Heap, Tree
+
+1. Stack
+말 그대로 점점 쌓인다라는 의미이다. 박스에 책을 10권 쌓는다고 생각해보자 가장 먼저 넣은 책은 가장 밑에 있고 가장 나중에 넣은 책은 가장 위에 있다. 이때 가장 먼저 넣은 책을 꺼내려면 그 위에 쌓여진 책을 하나씩 다시 꺼내야한다. 이를 FILO(First In Last Out) 이라고 한다.
+2. Queue
+큐는 스택과 다르다. 앞 뒤가 뚫린 파이프에 10개의 구슬을 넣는다고 생각해보자. 가장 먼저 넣은 구슬은 출구를 통해서 가장먼저 빠져 나갈 수 있다. 이를 FIFO(First In First Out) 이라고 한다. 큐를 사용하는 알고리즘 문제는 많다. 가장 많이 사용했던 경우는 최단거리를 구하는 문제에서 방문한 노드를 큐에 넣고 거리를 추가시키고 그랬던거 같다. 
+3. Heap
+힙은 완전이진트리 형태의 자료구조이다. 완전이진트리를 이해하지 못한다면 힙을 설명하기 어렵기에 완전이진트리를 먼저 살펴보자.
+완전 이진 트리란 마지막 레벨을 제외하고 모든 레벨이 채워져 있는 구조이다. 또한 왼쪽부터 채워져야 한다.
+    
+    ![https://blog.kakaocdn.net/dn/b7BofG/btq9Eilu1J5/0HNO2KiWkBxTvERSJGHla0/img.png](https://blog.kakaocdn.net/dn/b7BofG/btq9Eilu1J5/0HNO2KiWkBxTvERSJGHla0/img.png)
+    
+    힙은 여러개의 값 중 최댓값 또는 최솟값을 찾아낼 때 빠른 연산을 할 수 있다는 장점이 있다.
+    힙은 배열로 구현하는 것이 좋다. 간단하고 직관적이라서?
+    
+4. Tree
+트리는 스택이나 큐와 같은 **선형 구조**가 아닌 **비선형 구조**이다. 그니까 스택이나 큐는 2D라면 트리는 2.5D? 같은 느낌이다. 트리는 노드로 이루어진 자료구조이다. 선형구조인 스택이나 큐같은 경우는 부모와 자식이라는 개념 없이 index를 기준으로 나열된다. 예를들어서 첫번째 두번째 세번째… 이런 느낌?
+하지만 트리는 이와 다르다. 단순하게 나열되는 선형구조가 아니라 부모와 자식 관계로서 구조가 만들어진다.
+트리의 종류로는 이진트리, 이진탐색트리, 등등 많다.
+
+5. Priority Queue
+
+[https://velog.io/@humblechoi/자료구조-Array-vs-ArrayList](https://velog.io/@humblechoi/자료구조-Array-vs-ArrayList)
+
+## 4. HashTable
+
+1. 헤시테이블과 시간 복잡도
+HashTable 은 Key와 Value로 데이터를 저장하는 자료구조이다. 버킷(배열)을 사용하여 데이터를 저장한다. Key값에 해시함수를 적용하여 해당 배열에 index를 생성하고 이를 통해 Value를 저장하고 검색이 가능하다. Key값에 해당하는 Value를 검색하는데 해시 함수를 한번만 적용하면 되기 때문에 시간복잡도는 O(1)이다.
+2. Map 과 Table의 차이
+Java8 공식문서에 따르면 HaspMap은 AbstractMap에서 상속받고 AbstractMap은 Map이라는 인터페이스를 상속받는다. Table은 Dictionary라는 추상 클래스를 상속받는다.
+Dictionary 추상 클래스를 살펴보면 Enum 타입인 key와 elements가 존재하며 이를 통해 HashTable을 구현하는 것으로 보인다.
+Map은 Set로 구성된 key와 Collection으로 구성된 Value로 만들어져있다.
+구글링해보면 ‘**동기화 지원여부**’ 라는 차이점이 있다.
+@Synchronized(이는 해당 스레드를 제외하고 나머지 스레드들은 데이터에 접근할 수 없도록 막는 것.) 
+HashTable의 경우 put method 에서 synchronized가 붙어 있는데 이 이유는 다음과 같다고 생각한다. 해시함수를 적용하여 index를 생성할 때 hash function을 거치는데 여기서 서로다른 key값의 해시값이 서로 충돌하는 것을 막기 위함으로 보인다.
+
+```java
+// 해시테이블의 put
+public synchronized V put(K key, V value) {
+    // Make sure the value is not null
+    if (value == null) {
+        throw new NullPointerException();
+    }
+    // Makes sure the key is not already in the hashtable.
+    Entry<?,?> tab[] = table;
+    int hash = key.hashCode();
+    int index = (hash & 0x7FFFFFFF) % tab.length;
+    @SuppressWarnings("unchecked")
+    Entry<K,V> entry = (Entry<K,V>)tab[index];
+    for(; entry != null ; entry = entry.next) {
+        if ((entry.hash == hash) && entry.key.equals(key)) {
+            V old = entry.value;
+            entry.value = value;
+            return old;
+        }
+    }
+    addEntry(hash, key, value, index);
+    return null;
+}
+
+// 해시맵의 put
+public V put(K key, V value) {
+    return putVal(hash(key), key, value, false, true);
+}
+```
+
+## 5. BST, Binary Tree
+
+1. Binary Search Tree
+BST의 특징은 중복된 키를 허용하지 않으며 왼쪽 오른쪽이 크기에 따라 순차적으로 정렬되는 Tree이다.
+(50, 15, 62, 80, 7, 54, 11)
+    
+    ![https://blog.kakaocdn.net/dn/cexmJD/btq2z1DLANG/ZFiFmM5657r46N4hKKzv91/img.png](https://blog.kakaocdn.net/dn/cexmJD/btq2z1DLANG/ZFiFmM5657r46N4hKKzv91/img.png)
+    
+    위와 같은 과정을 거치면서 순차적으로 입력된다.
+    BST에서 탐색의 과정은 총 3개의 알고리즘이 존재한다. Preorder, Inorder, Postorder
+    
+2. Binary Tree
+이진트리는 자식노드가 최대 두개인 Tree를 뜻한다.
+Full binary Tree, Complete Binary Tree, Balanced Binary Tree가 존재한다.
